@@ -14,7 +14,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-//@Table(name="USER")
+@Table(name="USER")
 public class User
 {
 	@Id
@@ -88,12 +88,19 @@ public class User
 	public void setContacts(List<Contact> contacts) {
 		this.contacts = contacts;
 	}
-	
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				", role='" + role + '\'' +
+				", enabled=" + enabled +
+				", imgUrl='" + imgUrl + '\'' +
+				", about='" + about + '\'' +
+				", contacts=" + contacts +
+				'}';
 	}
-	
-	
-	
 }
